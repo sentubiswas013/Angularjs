@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <style>
+    .rating {
+        color: #a9a9a9;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.rating {
+        display: inline-block;
+    }
+
+    .rating li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 1px;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .rating .filled {
+        color: #21568b;
+    }
+    </style>
+</head>
+
+<body ng-app="RatingTutorial" ng-controller="RatingCtrl">
+    <h3>Rating</h3>
+    <div ng-init="rating = star.rating + 1"></div>
+    <div class="star-rating" star-rating rating-value="rating" data-max="10" on-rating-selected="rateFunction(rating)"></div>
+    <script src="js/angular.min.js"></script>
+    <script>
+    angular.module('RatingTutorial', [])
+        .controller('RatingCtrl', function($scope) {
+            $scope.rating = 5;
+            $scope.rateFunction = function(rating) {
+                console.log('Rating selected - ' + rating);
+            };
+        })
+        .directive('starRating',
+            function() {
+                return {
+                    restrict: 'A',
+                    template: '<ul class="rating">' +
+                        '	<li ng-repeat="star in stars" ng-class="star" ng-click="toggle($index)">' +
+                        '\u2605' +
+                        '</li>' +
+                        '</ul>',
+                    scope: {
+                        ratingValue: '=',
+                        max: '=',
+                        onRatingSelected: '&'
+                    },
+                    link: function(scope, elem, attrs) {
+                        var updateStars = function() {
+                            scope.stars = [];
+                            for (var i = 0; i < scope.max; i++) {
+                                scope.stars.push({
+                                    filled: i < scope.ratingValue
+                                });
+                            }
+                        };
+
+                        scope.toggle = function(index) {
+                            scope.ratingValue = index + 1;
+                            scope.onRatingSelected({
+                                rating: index + 1
+                            });
+                        };
+
+                        scope.$watch('ratingValue',
+                            function(oldVal, newVal) {
+                                if (newVal) {
+                                    updateStars();
+                                }
+                            }
+                        );
+                    }
+                };
+            }
+        );
+    </script>
+</body>
+
+</html>

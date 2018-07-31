@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <link data-require="bootstrap-css@*" data-semver="3.3.6" rel="stylesheet" href="css/bootstrap.css" />
+    <script>
+        document.write('<base href="' + document.location + '" />');
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script data-require="angular.js@1.4.x" src="js/angular.js" data-semver="1.4.9"></script>
+</head>
+
+<body ng-controller="RootController as root" class="container">
+  
+    <pre>Root view: root.view = {{ root.view }}</pre>
+  
+    <header-component view="root.view" on-view-change="root.view = $event.view"></header-component>
+    <main-component view="root.view"></main-component>
+  
+    <!-- http://stackoverflow.com/questions/36033940/how-to-pass-data-between-child-component-in-angular-1-5-not-using-scope#36033940 -->    
+    
+    <script type="text/javascript">
+      var app = angular.module('plunker', []);
+
+      app.controller('RootController', function() {
+        this.view = 'table'
+      });
+
+      app.component('headerComponent', {
+        template: `
+          <h3>Header component</h3>
+          <a class="btn btn-default btn-sm" ng-class="{'btn-primary': $ctrl.view === 'list'}" ng-click="$ctrl.setView('list')">List</a>
+          <a class="btn btn-default btn-sm" ng-class="{'btn-primary': $ctrl.view === 'table'}" ng-click="$ctrl.setView('table')">Table</a>
+        `,
+        controller: function() {
+          this.setView = function(view) {
+            this.view = view
+            this.onViewChange({$event: { view: view }})
+          }
+        },
+        bindings: {
+          view: '<',
+          onViewChange: '&'
+        }
+      });
+
+      app.component('mainComponent', {
+        template: `
+          <h4>Main component</h4>
+          Main view: {{ $ctrl.view }}
+        `,
+        bindings: {
+          view: '<'
+        }
+      });      
+    </script>
+
+</body>
+</html>

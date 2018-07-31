@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <style>
+    .active{color : red;}
+    </style>
+</head>
+
+<body>
+    <input ng-model="list.value"> 
+	<input ng-model="list.data"> 
+	<button ng-click="onSample();"> Submit </button>
+ 
+    <script src="js/angular.min.js"></script>
+    <script src="js/samplefactoryservice.js"></script>
+    <script>
+    angular.module('sampleproject').controller( 'SampleController',
+	function ($rootScope, $scope ,samplefactoryService )
+	{
+	 
+	$scope.list = {
+	 value : '',
+	 data : '' 
+	};
+	$scope.onSample = function()
+	{
+	//Sending data ($scope.list ) to myServicefunction (factory)
+	 samplefactoryService.myServicefunction( $scope.list ,
+	 function(data)
+	 {
+	//Getting data from myServicefunction(factory)
+	 $scope.datalist = data ;// response from service
+	 },
+	 function( data)
+	 {
+	  //error
+	 });
+	};
+	});
+	
+	
+	
+    </script>
+</body>
+
+</html>

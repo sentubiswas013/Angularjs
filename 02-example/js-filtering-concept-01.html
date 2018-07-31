@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <style>
+    .rating {
+        color: #a9a9a9;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.rating {
+        display: inline-block;
+    }
+
+    .rating li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 1px;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .rating .filled {
+        color: #21568b;
+    }
+    </style>
+</head>
+
+<body>
+    <div ng-app="sampleapp">
+        <div ng-controller="samplecontoller" ng-init="showData()">
+            <div class="searchbox"> Search :
+                <input type="text" value="Search" ng-model="searchquery">
+            </div>
+            <ul>
+                <li class="paginationclass" style="font-weight:bold;"> <span>Name</span><span>Age</span><span>Designation</span> </li>
+                <li class="paginationclass" ng-repeat="datalist in datalists | filter:searchquery | orderBy: 'name'">
+                    <span>{{ datalist.name }}</span><span>{{ datalist.age }}</span>
+                    <span>{{ datalist.Designation }}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script>
+    var myapp = angular.module('sampleapp', []);
+
+    myapp.controller('samplecontoller', function($scope) {
+
+
+        $scope.showData = function() {
+
+            $scope.itemsPerPage = 3;
+            $scope.currentPage = 0;
+            $scope.datalists = [
+                { "name": "John", "age": "16", "Designation": "SW" },
+                { "name": "Abraham", "age": "21", "Designation": "SW1" },
+                { "name": "Norm", "age": "19", "Designation": "SW2" },
+                { "name": "Leo", "age": "17", "Designation": "SW3" },
+                { "name": "Christino", "age": "21", "Designation": "SW4" },
+                { "name": "Prash", "age": "31", "Designation": "SW5" },
+                { "name": "Saniya", "age": "41", "Designation": "SW6" },
+                { "name": "Taniya", "age": "13", "Designation": "SW7" },
+                { "name": "Aji", "age": "15", "Designation": "SW8" },
+                { "name": "Vargees", "age": "16", "Designation": "SW9" },
+                { "name": "Philip", "age": "18", "Designation": "SW10" },
+                { "name": "Jorge", "age": "19", "Designation": "SW11" },
+                { "name": "Rimi", "age": "21", "Designation": "SW12" },
+                { "name": "Mathyu", "age": "22", "Designation": "SW13" },
+                { "name": "Ricky", "age": "23", "Designation": "SW14" },
+                { "name": "Ponding", "age": "24", "Designation": "SW15" },
+                { "name": "Alex", "age": "26", "Designation": "SW16" },
+                { "name": "John68", "age": "56", "Designation": "SW17" },
+                { "name": "John68", "age": "12", "Designation": "SW1" }
+            ]
+        }
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<ion-view title="Indian Caterers List" hide-back-button="true">
+
+<div class="bar bar-subheader item-input-inset bar-light">
+  <label class="item-input-wrapper">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input ng-model="query" type="search" placeholder="Search">
+  </label>
+</div>
+
+<ion-content class="has-subheader">
+  <ion-list show-delete="isDeletingItems" show-reorder="isReorderingItems" on-refresh-holding="refreshHolding()" on-refresh-opening="refreshOpening(ratio)" on-refresh="refreshItems()" on-reorder="onReorder(el, start, end)" refresh-complete="refreshComplete"
+  on-delete="deleteListItem(item, index)" delete-icon="ion-minus-circled" reorder-icon="ion-navicon" animation="my-repeat-animation" can-delete="true" can-reorder="true" can-swipe="true" option-buttons="optionButtons1">
+
+    <!-- shows that the item directive does not need attributes and can get values from the list attributes -->
+    <ion-item item="item" ng-href="#" ng-click="itemClick()" class="item-thumbnail-left" ng-repeat="item in items | filter:query" ng-class="{ active: item.isActive}">
+      <img ng-src="{{item.face}}">
+      <h2>{{item.from}}</h2>
+      <p class="ion-location"> {{item.address}}</p>
+      <p><img src="img/icon-rating.png" /></p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+</ion-view>
+
+

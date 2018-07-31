@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+     <p> {{ name }}</p>
+     <p> {{ name.length }}</p>
+</div>
+
+<script src="js/angular.min.js"></script>
+<script type="text/javascript">
+var app = angular.module("myApp", []);
+
+app.service("myService", function() {
+     var ref = this;
+     ref.name = "Sentu Biswas";
+});
+app.controller("myCtrl", function($scope, myService){
+     console.log(myService.name);
+     $scope.name = myService.name
+});
+</script>
+
+</body>
+</html>

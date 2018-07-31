@@ -1,0 +1,62 @@
+<html>
+   
+   <head>
+      <title>Angular JS Custom Directives</title>
+      <script src="js/angular.min.js"></script>      
+   </head>
+   
+   <body ng-app="app">
+      
+      <div class="col-md-5 col-md-offset-1">
+
+      <h3>Outer Value</h3>
+      Outer Value: <input type="text" ng-model="outerVal"><br>
+      <br></br>
+
+      <example-directive val-through-at="{{outerVal}}">
+        <h3>Value through @</h3>
+      </example-directive>
+      <br>
+
+      <example-directive val-through-equals="outerVal">
+        <h3>Value through =</h3>
+      </example-directive>
+
+      <script>
+        var app = angular.module('app', []);
+
+        app.directive('exampleDirective', function() {
+           return {
+
+               template: `
+                 <div class="panel panel-primary">
+                     <div ng-transclude></div>
+                     Value through @: <input type="text" ng-model="valThroughAt">
+                     <br></br>
+
+                     Value through =: <input type="text" ng-model="valThroughEquals">
+                     <br></br>
+
+                 </div>
+               `,
+
+                link: function(scope) {
+                   scope.$watch('valThroughAt', function(newValue, oldValue) {
+                   scope.$parent.outerVal = scope.valThroughAt;
+                 });
+               },
+
+               transclude: true,
+
+               scope: {
+                 valThroughEquals: '=',
+                 valThroughAt: "@"
+               },
+
+           }
+        });
+
+      </script>
+      
+   </body>
+</html>

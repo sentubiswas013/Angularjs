@@ -1,0 +1,22 @@
+{
+  "error":"error",
+  "sucess":"ok",
+  "result": {
+    "menuhome":{
+      "menu":[
+        "Indian Catererer",
+        "Menu List",
+        "Casg Reward",
+        "Request Quote",
+        "Faq",
+        "Contact Us",
+      ]
+    },
+    "menuside":{
+      "menu":[]
+    },
+    "menufotter":{
+      "menu":[]
+    }
+  }
+}

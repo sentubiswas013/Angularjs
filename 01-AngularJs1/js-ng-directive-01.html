@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body ng-app="myApp">
+
+<hello></hello>
+
+<script src="js/angular.min.js"></script>
+<script>
+
+var app = angular.module("myApp", [])
+app.directive("hello", function(){
+  return {
+    template: "<h1> Hello world </h1>"
+  }
+})
+
+</script>
+
+</body>
+</html>

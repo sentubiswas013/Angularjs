@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <style>
+    .active{color : red;}
+    </style>
+</head>
+
+<body>
+    <div ng-app="sampleapp">
+        <div ng-controller="samplecontoller" ng-init="showData()">
+            <ul>
+                <li class="paginationclass" ng-repeat="datalist in datalists" ng-click="select(datalist)" ng-class="{active: isActive(datalist)}">
+                    <div>{{ datalist.name }} </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script>
+    var myapp = angular.module('sampleapp', []);
+    myapp.controller('samplecontoller', function($scope) {
+        $scope.showData = function() {
+            $scope.datalists = [
+                { "name": "Read about angular" },
+                { "name": "Read about knockout" },
+                { "name": "Read about backbone" },
+                { "name": "Read about jquery" },
+                { "name": "Read about javascript" }
+            ]
+        }
+        $scope.select = function(item) {
+            this.selected = (this.selected === item ? null : item);
+        };
+        $scope.isActive = function(item) {
+            return this.selected === item;
+        };
+    });
+    </script>
+</body>
+
+</html>

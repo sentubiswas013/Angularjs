@@ -1,0 +1,205 @@
+{
+    "error": "",
+    "result": {
+        "availabilityClass": {
+            "1A": {
+                "avlDayList": [
+                    {
+                        "availablityDate": "24-1-2018",
+                        "availablityStatus": "AVAILABLE-0005",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "25-1-2018",
+                        "availablityStatus": "AVAILABLE-0002",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "26-1-2018",
+                        "availablityStatus": "AVAILABLE-0001",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "27-1-2018",
+                        "availablityStatus": "AVAILABLE-0001",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "28-1-2018",
+                        "availablityStatus": "AVAILABLE-0002",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "29-1-2018",
+                        "availablityStatus": "AVAILABLE-0002",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    }
+                ],
+                "informationFetched": "1516707402",
+                "totalCollectibleAmount": "1910.0"
+            },
+            "2A": {
+                "avlDayList": [
+                    {
+                        "availablityDate": "24-1-2018",
+                        "availablityStatus": "AVAILABLE-0002",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "25-1-2018",
+                        "availablityStatus": "AVAILABLE-0003",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "26-1-2018",
+                        "availablityStatus": "AVAILABLE-0003",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "27-1-2018",
+                        "availablityStatus": "AVAILABLE-0003",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "28-1-2018",
+                        "availablityStatus": "AVAILABLE-0001",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "29-1-2018",
+                        "availablityStatus": "RLWL1/WL1",
+                        "availablityType": "8224",
+                        "reason": "",
+                        "reasonType": "S"
+                    }
+                ],
+                "informationFetched": "1516707402",
+                "totalCollectibleAmount": "1130.0"
+            },
+            "3A": {
+                "avlDayList": [
+                    {
+                        "availablityDate": "24-1-2018",
+                        "availablityStatus": "AVAILABLE-0006",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "25-1-2018",
+                        "availablityStatus": "RLWL2/WL2",
+                        "availablityType": "8224",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "26-1-2018",
+                        "availablityStatus": "AVAILABLE-0024",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "27-1-2018",
+                        "availablityStatus": "AVAILABLE-0003",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "28-1-2018",
+                        "availablityStatus": "AVAILABLE-0001",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "29-1-2018",
+                        "availablityStatus": "RLWL1/WL1",
+                        "availablityType": "8224",
+                        "reason": "",
+                        "reasonType": "S"
+                    }
+                ],
+                "informationFetched": "1516707402",
+                "totalCollectibleAmount": "805.0"
+            },
+            "SL": {
+                "avlDayList": [
+                    {
+                        "availablityDate": "24-1-2018",
+                        "availablityStatus": "AVAILABLE-0036",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "25-1-2018",
+                        "availablityStatus": "AVAILABLE-0070",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "26-1-2018",
+                        "availablityStatus": "AVAILABLE-0077",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "27-1-2018",
+                        "availablityStatus": "AVAILABLE-0038",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "28-1-2018",
+                        "availablityStatus": "AVAILABLE-0018",
+                        "availablityType": "1",
+                        "reason": "",
+                        "reasonType": "S"
+                    },
+                    {
+                        "availablityDate": "29-1-2018",
+                        "availablityStatus": "RLWL8/WL8",
+                        "availablityType": "8224",
+                        "reason": "",
+                        "reasonType": "S"
+                    }
+                ],
+                "informationFetched": "1516707403",
+                "totalCollectibleAmount": "310.0"
+            }
+        },
+        "from": "ADI",
+        "quota": "GN",
+        "to": "BDTS",
+        "trainName": "SURYA NAGRI EXP",
+        "trainNo": "12479"
+    },
+    "status": "OK"
+}

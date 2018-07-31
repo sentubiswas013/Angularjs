@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <style>
+    .rating {
+        color: #a9a9a9;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul.rating {
+        display: inline-block;
+    }
+
+    .rating li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 1px;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .rating .filled {
+        color: #21568b;
+    }
+    </style>
+</head>
+
+<body>
+    <div ng-app="sampleapp">
+        <div ng-controller="samplecontoller" ng-init="showData()">
+            <ul>
+                <li class="paginationclass" ng-repeat="datalist in datalists | limitTo: paginationLimit()">
+                    <div>Name : {{ datalist.name }} Age : {{ datalist.age }}</div>
+                </li>
+            </ul>
+            <div class="pagination pagination-centered">
+                <button class="show-more-btn" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Show more</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script>
+    var myapp = angular.module('sampleapp', []);
+
+    myapp.controller('samplecontoller', function($scope) {
+
+
+        $scope.showData = function() {
+
+
+            $scope.datalists = [
+                { "name": "John", "age": "16" },
+                { "name": "John2", "age": "21" },
+                { "name": "John3", "age": "19" },
+                { "name": "John4", "age": "17" },
+                { "name": "John5", "age": "21" },
+                { "name": "John6", "age": "31" },
+                { "name": "John7", "age": "41" },
+                { "name": "John8", "age": "16" },
+                { "name": "John18", "age": "16" },
+                { "name": "John28", "age": "16" },
+                { "name": "John38", "age": "16" },
+                { "name": "John48", "age": "16" },
+                { "name": "John58", "age": "16" },
+                { "name": "John68", "age": "16" },
+                { "name": "John68", "age": "16" }
+            ]
+
+            //show more functionality
+            var pagesShown = 1;
+            var pageSize = 3;
+
+            $scope.paginationLimit = function(data) {
+                return pageSize * pagesShown;
+            };
+            $scope.hasMoreItemsToShow = function() {
+                return pagesShown < ($scope.datalists.length / pageSize);
+            };
+            $scope.showMoreItems = function() {
+                pagesShown = pagesShown + 1;
+            };
+
+
+        }
+
+    });
+    </script>
+</body>
+
+</html>

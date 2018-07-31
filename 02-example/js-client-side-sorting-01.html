@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <style>
+    .liclass,
+    .selectclass {
+        margin: 19px 28px;
+    }
+
+    .pagination-controle li {
+        display: inline-block;
+    }
+
+    .pagination-controle button {
+        width: 63px;
+        font-size: 12px;
+        margin-left: 13px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+	
+    <div ng-app="sampleapp">
+        <div ng-controller="samplecontoller" ng-init="showData()">
+            <select ng-model="sortorder1" class="selectclass">
+                <option disabled value="">Choose one</option>
+                <option value="name">Name</option>
+                <option value="age">Age</option>
+            </select>
+            <ul>
+                <li class="liclass" ng-repeat="datalist in datalists | orderBy:sortorder1">
+                    <div>Name : {{ datalist.name }} Age : {{ datalist.age }}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/angular.min.js"></script>
+    <script>
+    var myapp = angular.module('sampleapp', []);
+
+    myapp.controller('samplecontoller', function($scope) {
+        $scope.showData = function() {
+            $scope.datalists = [
+                { "name": "John", "age": "16" },
+                { "name": "Gorge", "age": "21" },
+                { "name": "Ram", "age": "19" },
+                { "name": "Muhad", "age": "17" },
+                { "name": "John5", "age": "21" },
+                { "name": "John6", "age": "31" },
+                { "name": "John7", "age": "41" },
+                { "name": "Abraham", "age": "54" },
+                { "name": "John18", "age": "36" },
+                { "name": "John28", "age": "11" },
+                { "name": "Zonal", "age": "13" },
+                { "name": "Babu", "age": "14" },
+                { "name": "John58", "age": "19" },
+                { "name": "John68", "age": "21" },
+                { "name": "John68", "age": "31" }
+            ]
+        }
+    });
+    </script>
+</body>
+
+</html>
