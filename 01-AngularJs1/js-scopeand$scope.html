@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body ng-app="app">
+
+<div ng-controller="TestCtrl">
+  <test-directive></test-directive>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+<script type="text/javascript">
+    angular.module('app', [])
+    .controller('TestCtrl', function($scope) {
+      console.log("$scope===",$scope)
+    })
+    .directive('testDirective', function() {
+      return {
+        scope: {},
+        link: function(scope) {
+          console.log("",scope)
+        }
+      }
+    })
+</script>
+</body>
+</html>

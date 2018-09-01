@@ -24,3 +24,20 @@
     </div>
 </body>
 </html>
+
+
+
+
+
+
+<div ng-app="angularmoduleapp" ng-controller="angularmodulectrl">
+{{ msg }}
+</div>
+
+
+<script type="text/javascript">
+var app = angular.module('angularmoduleapp', []);
+app.controller('angularmodulectrl', function ($scope) {
+$scope.msg = 'Welcome to Tutlane.com';
+});
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body ng-app="myapp">
+
+<div ng-controller="MyController" >
+    <userinfo></userinfo>
+</div>
+
+
+<script src="js/angular.min.js"></script>
+<script>
+var myapp = angular.module("myapp", [])
+myapp.directive('userinfo', function() {
+    var directive = {};
+
+    directive.restrict = 'E'; /* restrict this directive to elements */
+    directive.templateUrl = "div-template.html";
+
+    return directive;
+});
+myapp.controller("MyController", function($scope){
+	$scope.textToInsert = "Sentu Biswas"
+});
+</script>
+
+</body>
+</html>

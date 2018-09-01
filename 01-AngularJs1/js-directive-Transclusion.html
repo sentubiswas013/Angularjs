@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body ng-app="myapp">
+
+<div ng-controller="MyController" >
+    <mytransclude>This is a transcluded directive {{firstName}}</mytransclude>
+</div>
+
+
+<script src="js/angular.min.js"></script>
+<script>
+var myapp = angular.module("myapp", []);
+    myapp.directive('mytransclude', function() {
+        var directive = {};
+
+        directive.restrict = 'E'; /* restrict this directive to elements */
+        directive.transclude = true;
+        directive.template = "<div class='myTransclude' ng-transclude></div>";
+
+        return directive;
+    });
+    myapp.controller("MyController", function($scope, $http) {
+        $scope.firstName = "Jakob";
+    });
+</script>
+
+
+
+
+</body>
+</html>
